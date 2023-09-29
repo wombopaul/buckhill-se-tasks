@@ -1,10 +1,87 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="File" />
+    <meta name="keywords" content="File" />
+    <meta name="author" content="File" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Email Template</title>
+  </head>
+  <body>
+    <div class="mainfile-container">
+      <div class="events-container">
+        <div class="image-container">
+          <img src="assets/images/ff7253e5-b9fe-4e2f-9f27-3b3b3b9a81a7.png" alt="pets image" />
+        </div>
+        <div class="greetings">
+          <p>
+            Dear <span id="user" class="purchase-details"> </span>, We are
+            contacting you because there is an amount due on your purchase
+            <span id="purchaseId" class="purchase-details"></span>
+          </p>
+        </div>
 
+        <!-- cart detail -->
 
-</body>
+        <table class="transaction-table">
+          <thead id="table-title">
+            <tr>
+              <th colspan="3" style="padding: 0.5em 5px;" class="template-data">Purchase Summary</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-row">
+              <td class="template-data">Date:</td>
+              <td id="purchase-date" class="template-data">purchase date</td>
+              <td class="template-data"></td>
+            </tr>
+          </tbody>
+          <tbody id="cartDetail">
+            <tr class="table-row">
+              <td class="template-data">Amount:</td>
+              <td class="template-data">purchase amount</td>
+              <td class="template-data"></td>
+            </tr>
+          </tbody>
+          <tr class="table-row">
+            <td colspan="2" style="text-align: center;" class="template-data"><strong>Total Amount</strong></td>
+            <td class="template-data" id="total-amount"></td>
+          </tr>
+          <tr class="table-row gray-row">
+            <td colspan="2" style="text-align: center;" class="template-data"><strong>Amount Paid</strong></td>
+            <td class="template-data" id="amount-paid"></td>
+          </tr>
+        </table>
+
+        <!-- summary -->
+        <div class="greetings">
+            <p>
+                According to our records, the <i>amount due</i> is <span id="amount-due" style="color: red;"></span> Kn. Please, click on the next
+                button <span style="font-weight: bold;">to pay</span> this difference:
+            </p>
+        </div>
+
+        <div>
+            <button class="pay-btn">
+                <a href="https://www.google.com" style="text-decoration: none; color: whitesmoke; font-size: 16px; font-weight: 500;">Pay Now</a>
+            </button>
+        </div>
+
+        <div class="greetings">
+            <p style="line-height: 2em;">
+                If you have any other concerns, please contact our technical support team.
+                <br />
+                Kind regards,
+                <br />
+                <span>[company name]</span>
+            </p>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/file.js">
+        
+    </script>
+  </body>
 </html>

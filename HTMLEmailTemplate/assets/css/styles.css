@@ -1,0 +1,133 @@
+:root {
+    --red : #ff0000;
+    --light-red: #ff4d4d;
+
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+
+    --dark: #343a405e;
+    --light: #f8f9fa;
+
+    --navy: #220d33ea;
+    --navy-transclucent: rgb(243, 241, 239);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: var(--primary);
+    justify-content: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.mainfile-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.events-container {
+    gap: 2em;
+    position: relative;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5em auto;
+}
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.image-container img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.greetings {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.greetings p {
+    width: 100%;
+    line-height: 2.5em;
+}
+
+.purchase-details {
+    color: var(--red);
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.transaction-table {
+    position: relative;
+    width: 80%;
+    height: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0px solid #dee2e6;
+}
+.transaction-table thead, .transaction-table tbody {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    text-align: left;
+}
+
+#table-title {
+    background-color: var(--navy);
+    border-radius: 0.5em 0.5em 0 0;
+    border: 0;
+}
+
+#table-title th {
+    color: var(--light);
+    width: 100%;
+    text-align: center;
+}
+
+.table-row td:last-child {
+    text-align: right;
+}
+
+.gray-row {
+    background-color: rgb(244, 241, 238) !important;
+    color: var(--red);
+    border-bottom: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+}
+
+.template-data{
+    padding: 1em 5px;
+}
+
+.pay-btn {
+    background-color: var(--navy);
+    width: 200px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+
