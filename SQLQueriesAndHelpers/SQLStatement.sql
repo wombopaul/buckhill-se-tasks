@@ -20,5 +20,45 @@ FROM
     JOIN payments P ON O.payment_id = P.id
     JOIN order_statuses S ON O.order_status_id = S.id
 WHERE
-   YEAR(O.created_at) = YEAR(DATE_SUB(CURDATE(), INTERVAL -1 MONTH))
-    AND MONTH(O.created_at) = MONTH(DATE_SUB(CURDATE(), INTERVAL -1 MONTH));
+   O.created_at >= DATE_ADD(CURRENT_DATE(), INTERVAL 1-DAYOFWEEK(CURRENT_DATE()) DAY)
+    AND O.created_at <= DATE_ADD(DATE_ADD(CURRENT_DATE(), INTERVAL 1-DAYOFWEEK(CURRENT_DATE()) DAY), INTERVAL 6 DAY);
+
+
+-- A view where we can visualize a weekly report with 7 columns, each column will be labeled with the day and date, 
+-- and each row will show a concatenation of these elements and they will be separated by a double colon ::
+
+-- order_uuid
+
+-- number of products
+
+-- order amount in cents
+
+
+CREATE VIEW WeeklyReport AS
+SELECT
+    CASE WHEN DAYOFWEEK(o.created_at) = 2 THEN 
+        CONCAT(o.uuid, '::', JSON_LENGTH(o.products), '::', CAST(o.amount * 100 AS SIGNED)) END AS Monday,
+    CASE WHEN DAYOFWEEK(o.created_at) = 3 THEN 
+        CONCAT(o.uuid, '::', JSON_LENGTH(o.products), '::', CAST(o.amount * 100 AS SIGNED)) END AS Tuesday,
+    CASE WHEN DAYOFWEEK(o.created_at) = 4 THEN 
+        CONCAT(o.uuid, '::', JSON_LENGTH(o.products), '::', CAST(o.amount * 100 AS SIGNED)) END AS Wednesday,
+    CASE WHEN DAYOFWEEK(o.created_at) = 5 THEN 
+        CONCAT(o.uuid, '::', JSON_LENGTH(o.products), '::', CAST(o.amount * 100 AS SIGNED)) END AS Thursday,
+    CASE WHEN DAYOFWEEK(o.created_at) = 6 THEN 
+        CONCAT(o.uuid, '::', JSON_LENGTH(o.products), '::', CAST(o.amount * 100 AS SIGNED)) END AS Friday,
+    CASE WHEN DAYOFWEEK(o.created_at) = 7 THEN 
+        CONCAT(o.uuid, '::', JSON_LENGTH(o.products), '::', CAST(o.amount * 100 AS SIGNED)) END AS Saturday,
+    CASE WHEN DAYOFWEEK(o.created_at) = 1 THEN 
+        CONCAT(o.uuid, '::', JSON_LENGTH(o.products), '::', CAST(o.amount * 100 AS SIGNED)) END AS Sunday
+FROM (
+    SELECT
+        uuid,
+        products,
+        amount,
+        DATE(created_at) AS created_at
+    FROM
+        orders
+) AS o
+WHERE
+    O.created_at >= DATE_ADD(CURRENT_DATE(), INTERVAL 1-DAYOFWEEK(CURRENT_DATE()) DAY)
+    AND O.created_at <= DATE_ADD(DATE_ADD(CURRENT_DATE(), INTERVAL 1-DAYOFWEEK(CURRENT_DATE()) DAY), INTERVAL 6 DAY);
