@@ -1,0 +1,29 @@
+Case 2:
+
+A client has reported difficulty in logging in despite providing the correct username and password combination.
+In addition, when attempting to reset the password through the "Forgot password?" feature, they are not receiving the recovery email with the link.
+
+Steps to resolve Case 2:
+
+1. Client Verification:
+   - Confirm the client's identity and gather necessary account information to ensure they are the rightful owner of the account.
+
+2. Check System and Logs:
+   - Review the system to ensure there are no technical issues affecting login functionality or password reset emails.
+   - Check logs to identify any error messages or unusual activities related to the login or password reset processes.
+
+3. Verify Email Configuration:
+   - Confirm that the email service provider is functioning correctly and that emails are being sent out as expected.
+   - Ensure there are no issues with the email templates, sending mechanism, or the domain's spam policies that could be causing emails not to be received.
+
+4. Attempt Account Recovery:
+   - Manually trigger a password reset for the client's account and confirm if they receive the recovery email.
+   - If successful, guide the client on how to reset their password using the provided link.
+
+5. Work with Relevant Teams:
+   - Collaborate with the Backend Development Team to investigate any potential issues in the login and password reset processes within the application.
+   - Engage the Frontend Development Team if there are potential interface-related issues affecting the login and password reset functionalities.
+
+6. Feedback to Customer:
+   - Keep the client informed of the progress and steps being taken to resolve the login and password reset issues.
+   - Provide clear instructions and guidance to the client on any actions they need to take to recover their account.

@@ -1,0 +1,33 @@
+Case 3:
+
+A customer is encountering issues during the payment stage, with the screen freezing when attempting to complete the process, 
+despite trying all available payment methods.
+
+Steps to resolve Case 3:
+
+1. Gather Information:
+   - Collect detailed information from the customer about the issue, including the specific actions they took during the payment process and any error messages encountered.
+   - Confirm the customer's device, operating system, browser, and any other relevant technical details.
+
+2. Identify the Problem:
+   - Attempt to replicate the issue in a controlled environment to understand the problem and identify potential causes.
+   - Test different payment methods to see if the problem occurs consistently or is specific to certain methods.
+
+3. Check Payment Integration:
+   - Collaborate with the Backend Development Team to review the payment integration and processing to identify any bugs, issues, or latency.
+   - Verify if there have been recent changes or updates to the payment gateway that might be causing the freezing.
+
+4. Examine Frontend and UI:
+   - Collaborate with the Frontend Development Team to review the payment process on various devices and browsers to identify any frontend-related issues causing the freezing.
+   - Check for any bottlenecks in the UI that might be affecting the payment process.
+
+5. Quality Assurance Testing:
+   - Collaborate with the Quality Assurance Team to conduct thorough testing of the payment process on different devices, browsers, and payment methods to replicate the issue and identify potential solutions.
+
+6. Feedback to Customer:
+   - Keep the customer informed of the progress and steps being taken to resolve the payment issue.
+   - Provide regular updates on the investigation and steps being taken to prevent a recurrence.
+
+7. Resolution and Follow-up:
+   - Implement the necessary fixes based on the identified causes of the freezing during the payment process.
+   - Confirm with the customer that the issue is resolved and ask for feedback to ensure satisfaction.

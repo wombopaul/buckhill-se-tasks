@@ -1,0 +1,24 @@
+Case 1:
+
+The client has brought to our attention an issue concerning the final price displayed during their purchase. 
+They bought one item for 35Kn and two items for 20Kn each, but the final price shown on the screen was 85Kn.
+
+Steps to resolve Case 1:
+
+1. Inquiry:
+   - Gather detailed information from the client regarding the issue, including the products purchased, quantities, prices, and the final amount displayed.
+   - Verify the calculations to determine if there was a discrepancy in the final price calculation.
+   - Examine the system logs to identify any anomalies or errors during the transaction.
+
+2. Identify the Problem:
+   - Replicate the scenario in a controlled environment to understand the problem and identify potential causes.
+   - Check for any recent changes in the pricing logic, discount application, or tax calculations that might have caused the incorrect final price.
+
+3. Work with Relevant Teams:
+   - work with the Backend Team to review the pricing and calculation algorithms, ensuring they are functioning as intended and in line with the client's expectations.
+   - Collaborate with the Quality Assurance Team to conduct thorough testing of the purchase process to identify and rectify any issues related to price calculation.
+
+4. Feedback to Customer:
+   - Keep the client informed of the progress and steps taken to resolve the issue.
+   - Provide regular updates on the investigation and steps being taken to prevent a similar occurrence in the future.
+   - If the issue is resolved, confirm the resolution with the client and ask for feedback to ensure satisfaction.

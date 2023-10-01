@@ -1,0 +1,32 @@
+Case 4:
+
+A customer has reported receiving the "Amount Due" email as expected. However, they mentioned that the wording hasn't been displayed correctly, 
+preventing them from seeing the actual amount they need to pay. Instead, the email only reads "{amunt_due}."
+
+Steps to resolve Case 4:
+
+1. Customer Communication and Verification:
+   - Reach out to the customer to acknowledge the reported issue and gather specific details about the email, such as when it was received and which email client or platform they are using to view it.
+   - Request any additional context or screenshots to better understand the problem.
+
+2. Review Email Template:
+   - Examine the email template and content to identify the source of the issue with the "{amunt_due}" placeholder. Check for any errors in the email generation or template formatting.
+
+3. Check Data Integration:
+   - Collaborate with the Backend Development Team to ensure that the correct data (amount due) is being properly integrated into the email template.
+   - Verify that the placeholder "{amunt_due}" is being replaced with the actual amount due from the database.
+
+4. Frontend Email Rendering:
+   - Collaborate with the Frontend Development Team to review how the email template is rendered in different email clients and devices.
+   - Confirm that the email template is compatible with various email clients and that the placeholder is replaced with the actual amount due.
+
+5. Quality Assurance Testing:
+   - Collaborate with the Quality Assurance Team to conduct testing on different email clients and platforms to replicate the issue and identify potential solutions.
+
+6. Fix and Update:
+   - Implement the necessary changes in the email template to ensure the placeholder "{amunt_due}" is replaced with the actual amount due.
+   - Update and test the email template to confirm that the issue is resolved.
+
+7. Feedback to Customer:
+   - Inform the customer of the resolution and request them to check the email again to verify if the issue is now resolved.
+   - Thank the customer for reporting the problem and provide further assistance if needed.
