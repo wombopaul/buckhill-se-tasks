@@ -1,7 +1,7 @@
 
 var request = new XMLHttpRequest();
-request.open('GET', 'http://pet-shop.buckhill.com.hr/api/v1/order/dec77983-24d7-3866-99c1-f1b5c72c134d');
-request.setRequestHeader('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvcGV0LXNob3AuYnVja2hpbGwuY29tLmhyIiwiZXhwIjoxNjk2Mjk1MzI4LCJ1c2VyX3V1aWQiOiI2OWQyYTlhMi1kYWIxLTNjNmQtOThkZi04Nzc4MmQzZDYyY2EifQ.lvmgUT5qqKVwiNcX66PGmuxkdBwPnIOxwhmvFzw_WKbEQgfBZvtijeb4pgohNrqNXh0mO0zi1ijsTgcOu0aBnpQxxepCADfUBrVqr2_9rSI0YpqmETI8RUW4P5NoyvPEv5A3TgxrRn0DaDcrpQCT6j1nFI-fNiBtj2qbRBQI4DAnVHeZYs-OQp2z-yekmF_bYvVrjTxo-wZGvHeElGaRE3LgLQnHAVr_H4bz_TU6LWAA82wkv5KemjMXNX7bchTe_nYa7pmLx511r9k4nk9YbSq-M0dh9CYFWPA50xzjDqwHSD1AAxzji2gNb87L2agEChNpSUxhgNZhJhHf1eYdEQ');
+request.open('GET', 'http://pet-shop.buckhill.com.hr/api/v1/order/88ecf349-a0d0-380e-b71c-ba4b971f8671');
+request.setRequestHeader('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvcGV0LXNob3AuYnVja2hpbGwuY29tLmhyIiwiZXhwIjoxNjk2Mjk5NDE2LCJ1c2VyX3V1aWQiOiJiZjMxZWM0Yy05ZTQ5LTM4MjktOWY3Yy0zOWUxNmQ1Y2FjZTEifQ.mk5OvfNS9et9nO3xRgJX7hoqvLGxUa3scOmbDlOnT3WC5zVwQ81US_XAw5vg0FNjyGfFPZHnMzegctaKAwToKsCwdCpTJAmHvqPXgtmYuN8jjyl9IgunVo3mrpXfrKapijIARNbxc2AjZJhyKj65CVth5eMYMo66hqRXTXJ-LtDVMcJlSyI4A2BrYZtyxifL3bAgc1FcDHUbzgQ4QP0dXy4oNOtCFpOu-Qe5uEQ2czFrVewTES8xC4w5YfpDz7zrOZ6_agqFNpitNCcbgx3LGHyQ8p8ILe7oMwRQ5HTT_RpGzD4HNuQoWmVmLq-fAE2iUzNyDA6mCWXwNSo_87GFUA');
 request.onload = function(){
     if(request.status == 200){
         var data = JSON.parse(request.responseText);
