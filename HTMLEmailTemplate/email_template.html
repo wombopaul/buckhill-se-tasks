@@ -7,7 +7,7 @@
     <meta name="author" content="File" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <title>Email Template</title>
+    <title>Invoice Email Template</title>
   </head>
   <body>
     <div class="mainfile-container">
@@ -15,57 +15,10 @@
         <div class="image-container">
           <img src="assets/images/ff7253e5-b9fe-4e2f-9f27-3b3b3b9a81a7.png" alt="pets image" />
         </div>
-        <div class="greetings">
-          <p>
-            Dear <span id="user" class="purchase-details"> </span>, We are
-            contacting you because there is an amount due on your purchase
-            <span id="purchaseId" class="purchase-details"></span>
-          </p>
-        </div>
-
-        <!-- cart detail -->
-
-        <table class="transaction-table">
-          <thead id="table-title">
-            <tr>
-              <th colspan="3" style="padding: 0.5em 5px;" class="template-data">Purchase Summary</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="table-row">
-              <td class="template-data">Date:</td>
-              <td id="purchase-date" class="template-data">purchase date</td>
-              <td class="template-data"></td>
-            </tr>
-          </tbody>
-          <tbody id="cartDetail">
-            <tr class="table-row">
-              <td class="template-data">Amount:</td>
-              <td class="template-data">purchase amount</td>
-              <td class="template-data"></td>
-            </tr>
-          </tbody>
-          <tr class="table-row">
-            <td colspan="2" style="text-align: center;" class="template-data"><strong>Total Amount</strong></td>
-            <td class="template-data" id="total-amount"></td>
-          </tr>
-          <tr class="table-row gray-row">
-            <td colspan="2" style="text-align: center;" class="template-data"><strong>Amount Paid</strong></td>
-            <td class="template-data" id="amount-paid"></td>
-          </tr>
-        </table>
-
-        <!-- summary -->
-        <div class="greetings">
-            <p>
-                According to our records, the <i>amount due</i> is <span id="amount-due" style="color: red;"></span> Kn. Please, click on the next
-                button <span style="font-weight: bold;">to pay</span> this difference:
-            </p>
-        </div>
-
+        <div id="invoice-container"></div>
         <div>
             <button class="pay-btn">
-                <a href="https://www.google.com" style="text-decoration: none; color: whitesmoke; font-size: 16px; font-weight: 500;">Pay Now</a>
+                <a href="https://pet-shop.buckhill.com.hr/checkout" style="text-decoration: none; color: whitesmoke; font-size: 16px; font-weight: 500;">Pay Now</a>
             </button>
         </div>
 
@@ -75,13 +28,81 @@
                 <br />
                 Kind regards,
                 <br />
-                <span>[company name]</span>
+                <span>Petson Team</span>
             </p>
         </div>
       </div>
     </div>
-    <script src="assets/js/file.js">
-        
+
+    <script id="invoiceTemplate" type="text/x-handlebars-template">
+        {{#with data}}
+            <div class="greetings">
+                <p>
+                Dear <span class="purchase-details"> 
+                    {{user.last_name}} {{user.first_name}} 
+                    {{#if user.middle_name}}
+                        {{user.middle_name}}
+                    {{/if}}
+                </span>, We are
+                contacting you because there is an amount due on your purchase
+                <span class="purchase-details">{{uuid}}</span>
+                </p>
+            </div>
+
+            <table class="transaction-table">
+                <thead id="table-title">
+                  <tr>
+                    <th colspan="3" style="padding: 0.5em 5px;" class="template-data">Purchase Summary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-row">
+                    <td class="template-data">Date:</td>
+                    <td class="template-data">{{formatDate created_at}}</td>
+                    <td class="template-data"></td>
+                  </tr>
+                </tbody>
+                <tbody id="cartDetail">
+                    {{#each products}}
+                        <tr class="table-row gray-row">
+                            <td class="template-data">{{quantity}}</td>
+                            <td class="template-data">{{product}}</td>
+                            <td class="template-data">{{price}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+                <tr class="table-row">
+                    <td></td>
+                  <td  class="template-data"><strong>Total Amount</strong></td>
+                  <td class="template-data"><strong>{{caculateTotalAmount amount delivery_fee}} kn</strong></td>
+                </tr>
+                <tr class="table-row gray-row">
+                    <td></td>
+                  <td class="template-data"><strong>Amount Paid</strong></td>
+                  <td class="template-data">
+                    {{#if payment}}
+                    <strong> {{caculateTotalAmount amount delivery_fee}}Kn</strong>
+                    {{else}}
+                    <strong> 0.00 </strong> 
+                    {{/if}}
+                  </td>
+                </tr>
+              </table>
+              <div class="greetings">
+                <p>
+                    According to our records, the <i>amount due</i> is 
+                        {{#if payment}}
+                        {{caculateTotalAmount amount delivery_fee}}
+                    {{else}}
+                        0.00
+                    {{/if}}Kn. Please, click on the next
+                    button <span style="font-weight: bold;">to pay</span> this difference:
+                </p>
+            </div>
+        {{/with}}
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

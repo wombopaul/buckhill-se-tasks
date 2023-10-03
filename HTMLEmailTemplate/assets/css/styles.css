@@ -76,7 +76,7 @@ body {
 }
 
 .purchase-details {
-    color: var(--red);
+    /* color: var(--red); */
     font-size: 1em;
     font-weight: 500;
 }
@@ -88,6 +88,7 @@ body {
     border-collapse: collapse;
     border-spacing: 0;
     border: 0px solid #dee2e6;
+    margin: auto;
 }
 .transaction-table thead, .transaction-table tbody {
     width: 100%;
@@ -114,7 +115,7 @@ body {
 
 .gray-row {
     background-color: rgb(244, 241, 238) !important;
-    color: var(--red);
+    /* color: var(--red); */
     border-bottom: 1px solid #dee2e6;
     border-top: 1px solid #dee2e6;
 }
